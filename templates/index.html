@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Prediction</title>
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Fraud Detection Prediction</h2>
+
+        <h3>Single Entry Prediction (Upload a JSON file for one prediction)</h3>
+        <form action="/predict_single_json" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <label for="single-file">Upload JSON file:</label>
+                <input type="file" name="file" accept=".json" id="single-file">
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+        <p class="error-message">{{ error_message }}</p>
+
+        <h3>Multiple Entry Prediction (Upload a JSON file for multiple predictions)</h3>
+        <form action="/predict_multiple_json" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <label for="multi-file">Upload JSON file:</label>
+                <input type="file" name="file" accept=".json" id="multi-file">
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+        <p class="error-message">{{ error_message }}</p>
+
+        <h3>Or Enter Custom Values Manually</h3>
+        <form action="/predict_manual" method="POST">
+            {% for column in columns %}
+            <div class="form-group">
+                <label for="{{ column }}">{{ column }}:</label>
+                <input type="text" name="{{ column }}" placeholder="Enter {{ column }}" required>
+            </div>
+            {% endfor %}
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

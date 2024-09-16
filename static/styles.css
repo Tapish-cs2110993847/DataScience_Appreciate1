@@ -1,0 +1,118 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeff2;
+}
+
+/* Center container with padding and background */
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    color: #2b2b2b;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #495057;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Flex container for form input and submit button in the same line */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+    flex: 1;
+    text-align: right;
+}
+
+/* Input field styling */
+input[type="text"], input[type="file"] {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    flex: 2;
+    margin-right: 10px;
+}
+
+/* Button styles */
+input[type="submit"] {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for manual entry form */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Error message styling */
+p.error-message {
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .form-row, .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label {
+        text-align: left;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"], input[type="file"] {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Background styling for visual appeal */
+body {
+    background-image: linear-gradient(to bottom right, #007bff, #80d0ff);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

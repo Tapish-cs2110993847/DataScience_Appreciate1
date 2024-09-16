@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+</head>
+<body>
+    <h2>Fraud Detection Prediction</h2>
+    
+    <h3>Upload a JSON file for prediction</h3>
+    <form action="/predict_json" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Predict">
+    </form>
+    
+    <h3>Or enter custom values manually</h3>
+    <form action="/predict_manual" method="POST">
+        <!-- Input fields for each feature -->
+        {% for column in columns %}
+        <label for="{{ column }}">{{ column }}:</label>
+        <input type="text" name="{{ column }}" required><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
